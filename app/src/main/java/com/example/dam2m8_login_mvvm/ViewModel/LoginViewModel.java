@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel;
 public class LoginViewModel extends ViewModel {
 
     //Variables
-    MVVM_Repository miRepositorio;
+    MVVM_Repository miRepositorio = MVVM_Repository.get();
 
 
     public Boolean checkUser(String user, String pswd){

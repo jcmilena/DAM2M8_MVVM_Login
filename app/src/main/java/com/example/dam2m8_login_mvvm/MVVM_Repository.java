@@ -9,7 +9,7 @@ public class MVVM_Repository {
 
     }
 
-    public MVVM_Repository get(){
+    public static MVVM_Repository get(){
 
         if(srepository == null){
             srepository = new MVVM_Repository();
