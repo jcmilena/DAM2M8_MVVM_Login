@@ -12,15 +12,21 @@ import com.example.dam2m8_login_mvvm.View.LoginFragment;
 public class MainActivity extends AppCompatActivity {
 
     FragmentManager fm;
+    MVVM_Repository repository;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        fm = getSupportFragmentManager();
-        fm.beginTransaction().replace(R.id.fragment_container, new LoginFragment()).commit();
+        repository = MVVM_Repository.get();
+
+        //****CARGAR FRAGMENT INICIAL CON FRAGMENT MANAGER*****
+        //fm = getSupportFragmentManager();
+        //fm.beginTransaction().replace(R.id.fragment_container, new LoginFragment()).commit();
 
 
     }
+
+
 }

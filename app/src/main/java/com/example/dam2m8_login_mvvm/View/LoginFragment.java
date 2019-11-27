@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.navigation.Navigation;
 
 import com.example.dam2m8_login_mvvm.R;
 import com.example.dam2m8_login_mvvm.ViewModel.LoginViewModel;
@@ -88,10 +89,22 @@ public class LoginFragment extends Fragment {
                 if(loginViewModel.checkUser(userEditText.getText().toString(),
                         pswdEditText.getText().toString())){
 
-                    getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                            new HomeFragment()).commit();
+                    //***** CAMBIO DE VISTA CON SUPPORT FRAGMENT MANAGER ******
+                    //getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                    //        new HomeFragment()).commit();
+
+
+                    //CAMBIO DE VISTA CON NAVIGATION CONTROLLER
+                    Navigation.findNavController(v).navigate(R.id.homeFragment);
 
                 }
+            }
+        });
+
+        registerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.mapViewFragment);
             }
         });
 
